@@ -2,20 +2,28 @@ import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 export default function Wishlist({ role }) {
-  const { products, setProducts, username } = useContext(AppContext);
+  const { products, setProducts } = useContext(AppContext);
+
+  const onReservedClickHandler = (productId) => {
+    const productReservedIndex = products.findIndex(
+      (product) => product.id === productId
+    );
+
+    products[productReservedIndex].reserved =
+      !products[productReservedIndex].reserved;
+    setProducts([...products]);
+
+    console.log("newProducts", products);
+  };
 
   return (
     <div>
-      <h2>{username}'s wishlist</h2>
       <ul>
         {products &&
           products.map((product) => {
+            console.log(product);
             return (
-              <div
-                className="card mb-3"
-                style={{ maxWidth: "540px" }}
-                key={product.id}
-              >
+              <div className="card mb-3" key={product.id}>
                 <div className="row g-0">
                   <div className="col-md-4">
                     <img
@@ -29,9 +37,24 @@ export default function Wishlist({ role }) {
                       <h5 className="card-title">{product.title}</h5>
                       <p className="card-text">{product.description}</p>
                     </div>
-                    {role === "creator" && (
+                    {role === "subscriber" && (
                       <div className="mb-4">
-                        <button className="btn btn-primary">Nudge</button>
+                        {!product.reserved && (
+                          <button
+                            onClick={() => onReservedClickHandler(product.id)}
+                            className="btn btn-dark"
+                          >
+                            Reserve
+                          </button>
+                        )}
+                        {product.reserved && (
+                          <button
+                            onClick={() => onReservedClickHandler(product.id)}
+                            className="btn btn-light"
+                          >
+                            Unreserve
+                          </button>
+                        )}
                       </div>
                     )}
                   </div>

@@ -4,7 +4,7 @@ import Wishlist from "../wishlist/Wishlist";
 export default function SubscriberView() {
   return (
     <div>
-      <Wishlist user="subscriber" />
+      <Wishlist role="subscriber" />
     </div>
   );
 }
