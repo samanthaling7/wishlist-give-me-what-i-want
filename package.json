@@ -1,0 +1,12 @@
+{
+  "name": "give-me-what-i-want",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/samanthaling7/wishlist-give-me-what-i-want.git",
+  "author": "Justin Liu <justinliu@notonthehighstreet.com>",
+  "license": "MIT",
+  "scripts": {
+    "run:client": "cd wishlist-app && yarn start",
+    "run:server": "node server/index.js"
+  }
+}
