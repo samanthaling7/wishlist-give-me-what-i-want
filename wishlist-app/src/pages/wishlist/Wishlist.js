@@ -50,7 +50,7 @@ export default function Wishlist({ role }) {
                         {product.reserved && (
                           <button
                             onClick={() => onReservedClickHandler(product.id)}
-                            className="btn btn-light"
+                            className="btn btn-outline-dark"
                           >
                             Unreserve
                           </button>
