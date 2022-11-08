@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function CreatorView() {
-  return (
-    <div>CreatorView</div>
-  )
+  return <div>My wishlist | My subscribers</div>;
 }
