@@ -1,22 +1,21 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+
 import './App.css';
 
 function App() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/products?limit=10')
+      .then(res => res.json())
+      .then(data => setProducts(data.products));
+  }, []);
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {products.length > 0 && <img src={products[0].images[1]} className="" alt="" />}
       </header>
     </div>
   );
