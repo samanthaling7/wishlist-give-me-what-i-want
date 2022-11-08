@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 export default function Wishlist({ role }) {
-  const { products, username } = useContext(AppContext);
+  const { products, setProducts, username } = useContext(AppContext);
 
   return (
     <div>

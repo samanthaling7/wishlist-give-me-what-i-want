@@ -7,11 +7,6 @@ import SubscriberView from "./pages/subcriber/SubscriberView";
 
 import { AppContext } from "./context/AppContext";
 
-const initState = {
-  username: "username12378",
-  products: [],
-};
-
 const transformData = (products) => {
   return products.map((product) => ({
     ...product,
@@ -20,21 +15,20 @@ const transformData = (products) => {
 };
 
 function App() {
-  const [data, setData] = useState(initState);
+  const [products, setProducts] = useState([]);
+  const [username, setUsername] = useState("xyz");
+  const value = { products, setProducts, username };
 
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=10")
       .then((res) => res.json())
       .then((d) => {
-        setData({
-          ...data,
-          products: transformData(d.products),
-        });
+        setProducts(transformData(d.products));
       });
   }, []);
 
   return (
-    <AppContext.Provider value={data}>
+    <AppContext.Provider value={value}>
       <div className="App">
         <header className="App-header">
           <h1>My website</h1>
