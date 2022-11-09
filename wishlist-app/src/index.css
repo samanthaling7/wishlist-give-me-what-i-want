@@ -1,6 +1,24 @@
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "NOTHS Sans No3";
+  src: local("NOTHS Sans No3"),
+       url("./assets/noths_sans_3_regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NOTHS Sans No3";
+  src: local("NOTHS Sans No3"),
+       url("./assets/noths_sans_3_semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
 body, html {
   margin: 0;
+  background: #F1F0FC;
+  font-family: 'NOTHS Sans No3';
 }
