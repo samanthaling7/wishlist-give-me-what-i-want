@@ -72,8 +72,8 @@ export default function SubscriberView() {
       <div>
         <img
           src="https://www.shareicon.net/data/512x512/2016/09/15/829453_user_512x512.png"
-          width="200px"
-          height="200px"
+          width="150px"
+          height="150px"
           alt="sam"
           className="img-fluid rounded-start cover"
           style={{ margin: "30px" }}
@@ -96,6 +96,17 @@ export default function SubscriberView() {
           Unsubscribe
         </button>
       )}
+      <div
+        style={{
+          marginLeft: "440px",
+          marginBottom: "50px",
+          textAlign: "left",
+        }}
+      >
+        <h2>
+          <strong> Wishlist</strong>
+        </h2>
+      </div>
       <Wishlist role="subscriber" />
     </div>
   );
