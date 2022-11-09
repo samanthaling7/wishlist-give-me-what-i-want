@@ -83,7 +83,7 @@ export default function SubscriberView() {
       {!subscribe && (
         <button
           onClick={() => setSubscribe(true)}
-          classNameName="btn btn-outline-dark"
+          className="btn btn-outline-dark"
           data-toggle="modal"
           data-target="#exampleModal"
           style={{ marginBottom: "30px" }}
@@ -92,10 +92,7 @@ export default function SubscriberView() {
         </button>
       )}
       {subscribe && (
-        <button
-          onClick={() => setSubscribe(false)}
-          classNameName="btn btn-dark"
-        >
+        <button onClick={() => setSubscribe(false)} className="btn btn-dark">
           Unsubscribe
         </button>
       )}
