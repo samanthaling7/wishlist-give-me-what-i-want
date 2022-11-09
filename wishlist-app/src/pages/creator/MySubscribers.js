@@ -6,22 +6,22 @@ const subscribers = [
   {
     username: "Daisy",
     name: "Daisy Duck",
-    img: "https://cdn5.vectorstock.com/i/1000x1000/72/74/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg",
+    img: "https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png",
   },
   {
     username: "scroog",
     name: "Scroo Mcduck",
-    img: "https://cdn5.vectorstock.com/i/1000x1000/72/74/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg",
+    img: "https://www.shareicon.net/download/2016/05/26/771190_people_512x512.png",
   },
   {
     username: "Minnie",
     name: "Minnie Mouse",
-    img: "https://cdn5.vectorstock.com/i/1000x1000/72/74/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAGbyfScTHXApv0dMs539n-YAH3BtzaQ1yLw&usqp=CAU",
   },
   {
     username: "Donald",
     name: "Donald Duck",
-    img: "https://cdn5.vectorstock.com/i/1000x1000/72/74/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7gXPWxo_fQPzvP2TNGFtHzqQiChF6VklO68Fydsig_A69sVnizAMg_bxzCLvFEDMpwI8&usqp=CAU",
   },
 ];
 
