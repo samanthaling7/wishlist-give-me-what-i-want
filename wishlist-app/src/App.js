@@ -7,6 +7,7 @@ import MySubscribers from "./pages/creator/MySubscribers";
 import SubscriberView from "./pages/subcriber/SubscriberView";
 
 import { AppContext } from "./context/AppContext";
+import productsData from "./data/products";
 
 const transformData = (products) => {
   return products.map((product) => ({
@@ -17,25 +18,21 @@ const transformData = (products) => {
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [username, setUsername] = useState("xyz");
+  const [username, setUsername] = useState("Bobby");
   const value = { products, setProducts, username };
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=10")
-      .then((res) => res.json())
-      .then((d) => {
-        setProducts(transformData(d.products));
-      });
+    setProducts(transformData(productsData));
   }, []);
 
   return (
     <AppContext.Provider value={value}>
-      <div className="App">
+      <div className="App" style={{ maxWidth: "540px", margin: "auto" }}>
         <Router>
           <div className="m-2">
-            <Link to="/"> Creator </Link>
+            <Link to="/"> Your account </Link>
             <span>|</span>
-            <Link to="/subscriber"> Subscriber </Link>
+            <Link to="/subscriber"> Your subscriptions </Link>
           </div>
           <Routes>
             <Route exact path="/" element={<CreatorView />} />

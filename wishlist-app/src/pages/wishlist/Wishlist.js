@@ -8,85 +8,61 @@ export default function Wishlist({ role }) {
     const productReservedIndex = products.findIndex(
       (product) => product.id === productId
     );
-
     products[productReservedIndex].reserved =
       !products[productReservedIndex].reserved;
     setProducts([...products]);
-
-    console.log("newProducts", products);
   };
 
   return (
     <div>
-      <ul style={{ padding: "0" }}>
+      <ul className="m-0 p-0">
         {products &&
           products.map((product) => {
-            console.log(product);
             return (
-              <div>
-                <div
-                  class="card flex-row"
-                  key={product.id}
-                  style={{
-                    marginBottom: "50px",
-                    textAlign: "left",
-                    opacity: product.reserved ? "0.5" : "1",
-                  }}
-                >
+              <div
+                className="d-flex border border-secondary rounded my-4 overflow-hidden bg-white boxShadow"
+                key={product.title}
+              >
+                <div>
                   <img
                     src={product.thumbnail}
-                    className="img-fluid rounded-start cover"
-                    alt=""
-                    width=""
+                    style={{
+                      width: "175px",
+                      height: "100%",
+                      objectFit: "cover",
+                      boxSizing: "border-box",
+                    }}
+                    className="d-block"
+                    alt={product.title}
                   />
-                  <div class="card-body">
-                    <h5 className="card-title">{product.title}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <div />
-                    <div
-                      class="card-footer"
-                      style={{
-                        backgroundColor: "transparent",
-                        borderColor: "transparent",
-                        paddingLeft: "20px",
-                        marginTop: "100px",
-                      }}
-                    >
-                      <div class="row">
-                        <div
-                          class="col-xs-6"
-                          style={{
-                            marginRight: "auto",
-                          }}
+                </div>
+                <div
+                  className="text-left p-4 d-flex flex-column"
+                  style={{ flexGrow: 1 }}
+                >
+                  <h2
+                    className="card-title"
+                    style={{ fontSize: "20px", fontWeight: 600 }}
+                  >
+                    {product.title}
+                  </h2>
+                  <p className="card-text" style={{ fontSize: "14px" }}>
+                    by {product.partner}
+                  </p>
+                  <div className="d-flex justify-content-between mt-auto">
+                    <div>£{product.price}</div>
+                    {role === "subscriber" && (
+                      <div className="col-xs-6">
+                        <button
+                          onClick={() => onReservedClickHandler(product.id)}
+                          className={`btn ${
+                            !product.reserved ? "btn-dark" : "btn-outline-dark"
+                          }`}
                         >
-                          £{product.price}
-                        </div>
-                        {role === "subscriber" && (
-                          <div class="col-xs-6">
-                            {!product.reserved && (
-                              <button
-                                onClick={() =>
-                                  onReservedClickHandler(product.id)
-                                }
-                                className="btn btn-dark"
-                              >
-                                Reserve
-                              </button>
-                            )}
-                            {product.reserved && (
-                              <button
-                                onClick={() =>
-                                  onReservedClickHandler(product.id)
-                                }
-                                className="btn btn-outline-dark"
-                              >
-                                Unreserve
-                              </button>
-                            )}
-                          </div>
-                        )}
+                          {product.reserved ? "Reserve" : "Unreserve"}
+                        </button>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
