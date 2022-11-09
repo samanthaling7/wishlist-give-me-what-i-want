@@ -18,7 +18,7 @@ export default function Wishlist({ role }) {
 
   return (
     <div>
-      <ul>
+      <ul className="m-0 p-0">
         {products &&
           products.map((product) => {
             console.log(product);

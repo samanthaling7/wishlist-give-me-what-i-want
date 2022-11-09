@@ -7,6 +7,15 @@
   "license": "MIT",
   "scripts": {
     "run:client": "cd wishlist-app && yarn start",
-    "run:server": "node server/index.js"
+    "run:server": "nodemon server/index.js --watch",
+    "serve": "yarn run:client && yarn run:server"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.8.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.20"
   }
 }

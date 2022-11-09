@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
 import CreatorView from "./pages/creator/CreatorView";
+import MySubscribers from "./pages/creator/MySubscribers";
 import SubscriberView from "./pages/subcriber/SubscriberView";
 
 import { AppContext } from "./context/AppContext";
@@ -42,6 +43,11 @@ function App() {
           </div>
           <Routes>
             <Route exact path="/" element={<CreatorView />} />
+            <Route
+              exact
+              path="/creator/subscribers"
+              element={<MySubscribers />}
+            />
             <Route path="/subscriber" element={<SubscriberView />} />
           </Routes>
         </Router>
