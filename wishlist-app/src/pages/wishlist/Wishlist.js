@@ -18,45 +18,87 @@ export default function Wishlist({ role }) {
 
   return (
     <div>
-      <ul className="m-0 p-0">
+      <div
+        style={{
+          marginLeft: "440px",
+          marginBottom: "50px",
+          textAlign: "left",
+        }}
+      >
+        <h2>
+          <strong> Wishlist</strong>
+        </h2>
+      </div>
+      <ul>
         {products &&
           products.map((product) => {
             console.log(product);
             return (
-              <div className="card mb-3" key={product.id}>
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src={product.thumbnail}
-                      className="img-fluid rounded-start cover"
-                      alt=""
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">{product.title}</h5>
-                      <p className="card-text">{product.description}</p>
-                    </div>
-                    {role === "subscriber" && (
-                      <div className="mb-4">
-                        {!product.reserved && (
-                          <button
-                            onClick={() => onReservedClickHandler(product.id)}
-                            className="btn btn-dark"
-                          >
-                            Reserve
-                          </button>
-                        )}
-                        {product.reserved && (
-                          <button
-                            onClick={() => onReservedClickHandler(product.id)}
-                            className="btn btn-outline-dark"
-                          >
-                            Unreserve
-                          </button>
+              <div>
+                <div
+                  class="card flex-row"
+                  key={product.id}
+                  style={{
+                    marginRight: "400px",
+                    marginLeft: "400px",
+                    marginBottom: "50px",
+                    textAlign: "left",
+                    opacity: product.reserved ? "0.5" : "1",
+                  }}
+                >
+                  <img
+                    src={product.thumbnail}
+                    className="img-fluid rounded-start cover"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <div />
+                    <div
+                      class="card-footer"
+                      style={{
+                        backgroundColor: "transparent",
+                        borderColor: "transparent",
+                        paddingLeft: "20px",
+                        marginTop: "100px",
+                      }}
+                    >
+                      <div class="row">
+                        <div
+                          class="col-xs-6"
+                          style={{
+                            marginRight: "auto",
+                          }}
+                        >
+                          £{product.price}
+                        </div>
+                        {role === "subscriber" && (
+                          <div class="col-xs-6">
+                            {!product.reserved && (
+                              <button
+                                onClick={() =>
+                                  onReservedClickHandler(product.id)
+                                }
+                                className="btn btn-dark"
+                              >
+                                Reserve
+                              </button>
+                            )}
+                            {product.reserved && (
+                              <button
+                                onClick={() =>
+                                  onReservedClickHandler(product.id)
+                                }
+                                className="btn btn-outline-dark"
+                              >
+                                Unreserve
+                              </button>
+                            )}
+                          </div>
                         )}
                       </div>
-                    )}
+                    </div>
                   </div>
                 </div>
               </div>

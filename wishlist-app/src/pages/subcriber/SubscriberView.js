@@ -69,23 +69,30 @@ export default function SubscriberView() {
           </div>
         </div>
       </div>
-
-      <div>SamanthaL78</div>
+      <div>
+        <img
+          src="https://www.shareicon.net/data/512x512/2016/09/15/829453_user_512x512.png"
+          width="200px"
+          height="200px"
+          alt="sam"
+          className="img-fluid rounded-start cover"
+          style={{ margin: "30px" }}
+        />
+        <div style={{ marginBottom: "20px", fontWeight: "bold" }}>@Sam</div>
+      </div>
       {!subscribe && (
         <button
           onClick={() => setSubscribe(true)}
-          classNameName="btn btn-outline-dark"
+          className="btn btn-outline-dark"
           data-toggle="modal"
           data-target="#exampleModal"
+          style={{ marginBottom: "30px" }}
         >
           Subscribe
         </button>
       )}
       {subscribe && (
-        <button
-          onClick={() => setSubscribe(false)}
-          classNameName="btn btn-dark"
-        >
+        <button onClick={() => setSubscribe(false)} className="btn btn-dark">
           Unsubscribe
         </button>
       )}
