@@ -30,9 +30,9 @@ function App() {
       <div className="App" style={{ maxWidth: "540px", margin: "auto" }}>
         <Router>
           <div className="m-2">
-            <Link to="/"> Creator </Link>
+            <Link to="/"> Your account </Link>
             <span>|</span>
-            <Link to="/subscriber"> Subscriber </Link>
+            <Link to="/subscriber"> Your subscriptions </Link>
           </div>
           <Routes>
             <Route exact path="/" element={<CreatorView />} />

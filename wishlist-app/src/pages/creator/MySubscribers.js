@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import Subscriber from "./Subscriber";
 
@@ -27,6 +27,7 @@ const subscribers = [
 
 export default function MySubscribers() {
   const { username } = useContext(AppContext);
+  const [sent, setSent] = useState(false);
 
   const submitHandler = async (subscriber) => {
     const data = {
@@ -39,6 +40,9 @@ export default function MySubscribers() {
       body: JSON.stringify(data),
     };
     await fetch("http://localhost:8080/spam-my-friends", requestOptions);
+    setSent(true);
+
+    setTimeout(() => setSent(false), 2000);
   };
 
   return (
@@ -66,7 +70,7 @@ export default function MySubscribers() {
               <Subscriber {...sub} />
             </div>
             <button
-              className="btn col-3 border border-secondary rounded bg-white"
+              className="btn btn-light col-3 border border-secondary rounded bg-white"
               style={{ width: "150px" }}
               onClick={() => submitHandler(sub)}
             >
@@ -75,6 +79,11 @@ export default function MySubscribers() {
           </li>
         ))}
       </ul>
+      {sent && (
+        <div class="alert alert-info mt-2" role="alert">
+          Your reminder has been sent
+        </div>
+      )}
     </div>
   );
 }

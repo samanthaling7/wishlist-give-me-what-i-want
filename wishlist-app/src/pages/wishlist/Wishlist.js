@@ -20,7 +20,7 @@ export default function Wishlist({ role }) {
           products.map((product) => {
             return (
               <div
-                className="d-flex border border-secondary rounded my-4 overflow-hidden bg-white"
+                className="d-flex border border-secondary rounded my-4 overflow-hidden bg-white boxShadow"
                 key={product.title}
               >
                 <div>

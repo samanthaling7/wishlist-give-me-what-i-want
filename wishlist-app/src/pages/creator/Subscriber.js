@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Subscriber({ username, name, img }) {
   return (
-    <div className="d-flex border border-secondary rounded my-2 overflow-hidden bg-white">
+    <div className="d-flex border border-secondary rounded my-2 overflow-hidden bg-white boxShadow">
       <img
         src={img}
         style={{
