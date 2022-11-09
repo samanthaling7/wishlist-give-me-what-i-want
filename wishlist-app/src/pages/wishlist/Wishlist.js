@@ -18,18 +18,7 @@ export default function Wishlist({ role }) {
 
   return (
     <div>
-      <div
-        style={{
-          marginLeft: "440px",
-          marginBottom: "50px",
-          textAlign: "left",
-        }}
-      >
-        <h2>
-          <strong> Wishlist</strong>
-        </h2>
-      </div>
-      <ul>
+      <ul style={{ padding: "0" }}>
         {products &&
           products.map((product) => {
             console.log(product);
@@ -39,8 +28,6 @@ export default function Wishlist({ role }) {
                   class="card flex-row"
                   key={product.id}
                   style={{
-                    marginRight: "400px",
-                    marginLeft: "400px",
                     marginBottom: "50px",
                     textAlign: "left",
                     opacity: product.reserved ? "0.5" : "1",
@@ -50,6 +37,7 @@ export default function Wishlist({ role }) {
                     src={product.thumbnail}
                     className="img-fluid rounded-start cover"
                     alt=""
+                    width=""
                   />
                   <div class="card-body">
                     <h5 className="card-title">{product.title}</h5>
