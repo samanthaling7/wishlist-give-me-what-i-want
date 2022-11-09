@@ -31,15 +31,11 @@ function App() {
   return (
     <AppContext.Provider value={value}>
       <div className="App">
-        <header className="App-header">
-          <h1>My website</h1>
-        </header>
         <Router>
-          <div className="m-4">
-            <Link to="/">Creator</Link>
-          </div>
-          <div className="m-4">
-            <Link to="/subscriber">Subscriber</Link>
+          <div className="m-2">
+            <Link to="/"> Creator </Link>
+            <span>|</span>
+            <Link to="/subscriber"> Subscriber </Link>
           </div>
           <Routes>
             <Route exact path="/" element={<CreatorView />} />
